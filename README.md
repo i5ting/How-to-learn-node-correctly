@@ -237,7 +237,7 @@ npm基本命令
 | --- | --- | --- |
 | npm install xxx | 安装xxx模块，但不记录到package.json里 | npm i xxx |
 | npm install --save xxx | 安装xxx模块，并且记录到package.json里，字段对应的dependency，是产品环境必须依赖的模块 | npm i -s xxx |
-| npm install --save-de xxx | 安装xxx模块，并且记录到package.json里，字段对应的dev-dependency，是开发环境必须依赖的模块，比如测试类的（mocha、chai、sinon、zombie、supertest等）都在 | npm i -D xxx |
+| npm install --save-dev xxx | 安装xxx模块，并且记录到package.json里，字段对应的dev-dependency，是开发环境必须依赖的模块，比如测试类的（mocha、chai、sinon、zombie、supertest等）都在 | npm i -D xxx |
 | npm install --global xxx | 全局安装xxx模块，但不记录到package.json里，如果模块里package.json有bin配置，会自动链接，作为cli命令 | npm i -g xxx |
 
 ### 常用软件
@@ -516,7 +516,7 @@ Async/Await是异步操作的终极解决方案，Koa 2在node 7.6发布之后�
 
 这里给出一段Koa 2应用里的一段代码 
 
-```
+```js
 exports.list = async (ctx, next) => {
   try {
     let students = await Student.getAllAsync();
@@ -540,7 +540,7 @@ exports.list = async (ctx, next) => {
 
 4.1 正常写法
 
-```
+```js
 const pkgConf = require('pkg-conf');
 
 async function main(){
@@ -555,7 +555,7 @@ main();
 
 变态写法
 
-```
+```js
 const pkgConf = require('pkg-conf');
 
 (async () => {
@@ -568,7 +568,7 @@ const pkgConf = require('pkg-conf');
 
 4.2 await + Promise
 
-```
+```js
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require("fs"));
 
@@ -582,7 +582,7 @@ main();
 
 4.3 await + co + generator
 
-```
+```js
 const co = require('co');
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require("fs"));

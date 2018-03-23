@@ -1,5 +1,9 @@
 # 【知乎Live】狼叔：如何正确的学习Node.js
 
+![](media/preview.png)
+
+预览地址 https://i5ting.github.io/How-to-learn-node-correctly/
+
 Live 简介
 
 你好，我是 i5ting ，江湖人称「狼叔」，目前是阿里巴巴技术专家，斯达克学院（ StuQ ）明星讲师， Node.js 技术布道者。曾就职于去哪儿、新浪、网秦，做过前端、后端、数据分析，是一名全栈技术的实践者。

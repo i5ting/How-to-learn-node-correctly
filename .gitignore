@@ -29,3 +29,4 @@ node_modules
 .vscode/
 preview/
 package-lock.json
+.DS_Store

@@ -1,0 +1,27 @@
+{
+  "name": "How-to-learn-node-correctly",
+  "version": "1.0.0",
+  "description": "node.js tutorial ===================",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i5ting/node-debug-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i5ting/node-debug-tutorial/issues"
+  },
+  "homepage": "https://github.com/i5ting/node-debug-tutorial",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-open": "^0.3.1",
+    "gulp-rename": "^1.2.0",
+    "i5ting_toc": "^1.1.5",
+    "shelljs": "^0.3.0"
+  }
+}

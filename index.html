@@ -66,6 +66,8 @@
         <div id='readme' style='width:70%;margin-left:20%;'>
           	<article class='markdown-body'>
             	<h1 id="-live-node-js">【知乎Live】狼叔：如何正确的学习Node.js</h1>
+<p><img src="media/preview.png" alt=""></p>
+<p>预览地址 <a href="https://i5ting.github.io/How-to-learn-node-correctly/">https://i5ting.github.io/How-to-learn-node-correctly/</a></p>
 <p>Live 简介</p>
 <p>你好，我是 i5ting ，江湖人称「狼叔」，目前是阿里巴巴技术专家，斯达克学院（ StuQ ）明星讲师， Node.js 技术布道者。曾就职于去哪儿、新浪、网秦，做过前端、后端、数据分析，是一名全栈技术的实践者。</p>
 <p>现在，越来越多的科技公司和开发者开始使用 Node.js 开发各种应用。Node.js除了能够辅助大前端开发外，还可以编写Web应用，封装Api，组装RPC服务等，甚至是开发VSCode编辑器一样的PC客户端。和其它技术相比， Node.js 简单易学，性能好、部署容易，能够轻松处理高并发场景下的大量服务器请求。Node.js 周边的生态也非常强大，NPM（Node包管理）上有超过60万个模块，日下超过载量3亿次。但编写 Node.js 代码对新人和其它语言背景的开发者来说，不是一件容易的事，在入门之前需要弄懂不少复杂的概念。</p>
@@ -248,7 +250,7 @@ $ nrm use cnpm
 <td>npm i -s xxx</td>
 </tr>
 <tr>
-<td>npm install --save-de xxx</td>
+<td>npm install --save-dev xxx</td>
 <td>安装xxx模块，并且记录到package.json里，字段对应的dev-dependency，是开发环境必须依赖的模块，比如测试类的（mocha、chai、sinon、zombie、supertest等）都在</td>
 <td>npm i -D xxx</td>
 </tr>
@@ -592,7 +594,7 @@ myEmitter.emit(&#39;event&#39;, &#39;a&#39;, &#39;b&#39;);
 <h4 id="4-async-await">4）终极解决方案：Async/Await</h4>
 <p>Async/Await是异步操作的终极解决方案，Koa 2在node 7.6发布之后，立马发布了正式版本，并且推荐使用async函数来编写Koa中间件。</p>
 <p>这里给出一段Koa 2应用里的一段代码 </p>
-<pre><code>exports.list = async (ctx, next) =&gt; {
+<pre><code class="lang-js">exports.list = async (ctx, next) =&gt; {
   try {
     let students = await Student.getAllAsync();
 
@@ -603,7 +605,8 @@ myEmitter.emit(&#39;event&#39;, &#39;a&#39;, &#39;b&#39;);
     return ctx.api_error(err);
   }
 };
-</code></pre><p>它做了3件事儿</p>
+</code></pre>
+<p>它做了3件事儿</p>
 <ul>
 <li>通过await Student.getAllAsync();来获取所有的students信息。</li>
 <li>通过await ctx.render渲染页面</li>
@@ -611,7 +614,7 @@ myEmitter.emit(&#39;event&#39;, &#39;a&#39;, &#39;b&#39;);
 </ul>
 <p>是不是非常简单，现在Eggjs里也都是这样同步的代码。</p>
 <p>4.1 正常写法</p>
-<pre><code>const pkgConf = require(&#39;pkg-conf&#39;);
+<pre><code class="lang-js">const pkgConf = require(&#39;pkg-conf&#39;);
 
 async function main(){
     const config = await pkgConf(&#39;unicorn&#39;);
@@ -621,8 +624,9 @@ async function main(){
 }
 
 main();
-</code></pre><p>变态写法</p>
-<pre><code>const pkgConf = require(&#39;pkg-conf&#39;);
+</code></pre>
+<p>变态写法</p>
+<pre><code class="lang-js">const pkgConf = require(&#39;pkg-conf&#39;);
 
 (async () =&gt; {
     const config = await pkgConf(&#39;unicorn&#39;);
@@ -630,8 +634,9 @@ main();
     console.log(config.rainbow);
     //=&gt; true
 })();
-</code></pre><p>4.2 await + Promise</p>
-<pre><code>const Promise = require(&#39;bluebird&#39;);
+</code></pre>
+<p>4.2 await + Promise</p>
+<pre><code class="lang-js">const Promise = require(&#39;bluebird&#39;);
 const fs = Promise.promisifyAll(require(&quot;fs&quot;));
 
 async function main(){
@@ -640,8 +645,9 @@ async function main(){
 }
 
 main();
-</code></pre><p>4.3 await + co + generator</p>
-<pre><code>const co = require(&#39;co&#39;);
+</code></pre>
+<p>4.3 await + co + generator</p>
+<pre><code class="lang-js">const co = require(&#39;co&#39;);
 const Promise = require(&#39;bluebird&#39;);
 const fs = Promise.promisifyAll(require(&quot;fs&quot;));
 
@@ -655,7 +661,8 @@ async function main(){
 }
 
 main();
-</code></pre><p>要点</p>
+</code></pre>
+<p>要点</p>
 <ul>
 <li>co的返回值是promise，所以await可以直接接co。</li>
 <li>co的参数是genrator</li>

@@ -466,9 +466,9 @@ $ nrm use cnpm
 <p>直面问题才能有更好的解决方式，Node.js的异步是整个学习Node.js过程中重中之重。</p>
 <ul>
 <li>1) 异步流程控制学习重点</li>
-<li>2）Api写法：Error-first Callback 和 EventEmitter</li>
+<li>2）Api写法：Error-first Callback 和 EventEmitter </li>
 <li>3）中流砥柱：Promise </li>
-<li>4）终极解决方案：Async/Await</li>
+<li>4）终极解决方案：Async/Await </li>
 </ul>
 <h4 id="1-">1) 异步流程控制学习重点</h4>
 <p>我整理了一张图，更直观一些。从09年到现在，8年多的时间里，整个Node.js社区做了大量尝试，其中曲折足足够写一本书的了。大家先简单了解一下。</p>
@@ -685,7 +685,7 @@ main();
 </ul>
 <p>综上所述</p>
 <ul>
-<li>Async函数是趋势，如果Chrome 52. v8 5.1已经支持Async函数(<a href="https://github.com/nodejs/CTC/issues/7)了，Node.js支持还会远么？">https://github.com/nodejs/CTC/issues/7)了，Node.js支持还会远么？</a></li>
+<li>Async函数是趋势，如果Chrome 52. v8 5.1已经支持Async函数 ( <a href="https://github.com/nodejs/CTC/issues/7">https://github.com/nodejs/CTC/issues/7</a> )了，Node.js支持还会远么？</li>
 <li>Async和Generator函数里都支持promise，所以promise是必须会的。</li>
 <li>Generator和yield异常强大，不过不会成为主流，所以学会基本用法和promise就好了，没必要所有的都必须会。</li>
 <li>co作为Generator执行器是不错的，它更好的是当做Promise 包装器，通过Generator支持yieldable，最后返回Promise，是不是有点无耻？</li>
@@ -698,7 +698,7 @@ main();
 <li>3）中流砥柱：Promise </li>
 <li>4）终极解决方案：Async/Await</li>
 </ul>
-<p>这里再提一下关于Node.js源码阅读问题，很多人api都还没完熟练就去阅读源码，这是非常不赞成的，不带着问题去读源码是比较容易迷失在大量代码中的。效果并不好。</p>
+<p>这里再提一下关于Node.js源码阅读问题，很多人api都还没玩儿熟练就去阅读源码，这是非常不赞成的，不带着问题去读源码是比较容易迷失在大量代码中的。效果并不好。</p>
 <p>先用明白，然后再去阅读Node.js源码，然后探寻libuv并发机制。很多人买了朴大的《深入浅出Node.js》一书，看了之后还是不太会用，不是书写的不好，而是步骤不对。</p>
 <ul>
 <li>Node in action和了不起的Node.js是入门的绝好书籍，非常简单，各个部分都讲了，但不深入，看了之后，基本就能用起来了</li>
@@ -706,7 +706,7 @@ main();
 <li>实践类的可以看看雷宗民（老雷）和赵坤（nswbmw）写的书</li>
 </ul>
 <p>我一般给大家的推荐是把Node in action读上5遍10遍，入门干活足够了。剩下的就是反复实践，多写代码和npm模块就好。</p>
-<p>目前所有的书籍几乎都有点过时了，大部分都是Node.js v0.10左右的版本的，我得新书是基于Node.js 8版本的，预计2018年3月或4月出版。别催我，真没法更快了。</p>
+<p>目前所有的书籍几乎都有点过时了，大部分都是Node.js v0.10左右的版本的，我的新书是基于Node.js 8版本的，预计2018年3月或4月出版。别催我，真没法更快了。</p>
 <p>目录</p>
 <ul>
 <li><a href="01.md">01 Node.js初识</a></li>
@@ -740,7 +740,7 @@ main();
 <li>3）开发者技能单一，很多是从前端转过来的，对数据库，架构方面知识欠缺，对系统设计也知之不多，这是很危险的，有种麻杆打狼两头害怕的感觉。</li>
 <li>4）Node在科普、培训、布道等方面做的并不好，国外使用的非常多，国内却很少人知道，不如某些语言做得好。</li>
 </ul>
-<p>尽管如此，Node.js 还是尽人皆知，卷入各种是非风口，也算是在大前端浪潮中大红大紫。原因它的定位非常明确，补足以 JavaScript 为核心的全栈体系中服务器部分。开发也是人，能够同时掌握并精通多门语言的人毕竟不多，而且程序员的美德是“懒”，能使用 JavaScript 一门语言完成所有事儿，为什么要学更多呢？</p>
+<p>尽管如此，Node.js 还是尽人皆知，卷入各种是非风口，也算是在大前端浪潮中大红大紫。原因是它的定位非常明确，补足以 JavaScript 为核心的全栈体系中服务器部分。开发也是人，能够同时掌握并精通多门语言的人毕竟不多，而且程序员的美德是“懒”，能使用 JavaScript 一门语言完成所有事儿，为什么要学更多呢？</p>
 <p>对于 Web 应用大致分2种，带视图的<strong>传统Web应用</strong>和<strong>面向Api接口应用</strong>，我们先看一下 Node.js Web 应用开发框架的演进时间线大致如下：</p>
 <ul>
 <li>2010年 TJ Holowaychuk 写的 Express</li>
@@ -831,7 +831,7 @@ main();
 <ul>
 <li>异步流程控制（前面讲过了）</li>
 <li>基本框架 Koa或Express，新手推荐Express，毕竟资料多，上手更容易。如果有一定经验，推荐Koa，其实这些都是为了了解Web编程原理，尤其是中间件机制理解。</li>
-<li>数据库 mongodb或mysql都行，mongoose和Sequelize、bookshelf，TypeOrm等都非常不错。对于事物，不是Node.js的锅，是你选的数据库的问题。另外一些偏门，想node连sqlserver等估计还不成熟，我是不会这样用的。</li>
+<li>数据库 mongodb或mysql都行，mongoose和Sequelize、bookshelf，TypeOrm等都非常不错。对于事务，不是Node.js的锅，是你选的数据库的问题。另外一些偏门，想node连sqlserver等估计还不成熟，我是不会这样用的。</li>
 <li>模板引擎， ejs，jade，nunjucks。理解原理最好。尤其是extend，include等高级用法，理解布局，复用的好处。其实前后端思路都是一样的。</li>
 </ul>
 <h3 id="-node-js-">迷茫时学习Node.js最好的方法</h3>
@@ -909,7 +909,7 @@ main();
 <li>从 java 开始，蹭课，背着机箱到深圳，3个月胖20斤</li>
 <li>坚持翻译英文文档，看 《Thinking in Java》</li>
 <li>毕业后开始 bi，整理 bi 文档</li>
-<li>学长明林清，传授 jQuery，愿意学，别人就更愿意分析</li>
+<li>学长明林清，传授 jQuery，愿意学，别人就更愿意分享</li>
 <li>接手《内蒙广电数据分析与科学决策系统》，打通前、后端</li>
 <li>广东联通，自己造轮子，写 jQuery 插件，DRY</li>
 <li>做云计算，学习 AIX，写有《凌云志》</li>
@@ -1045,7 +1045,7 @@ main();
 辅导新人技能成长； 
 协助主管做招聘和团队管理工作。</p>
 <h3 id="-">大家是选大公司还是小公司？</h3>
-<p>我再知乎上回复的《在跳槽后的第三个月，收到世界500强的offer，我该怎么办？》</p>
+<p>我在知乎上回复的《在跳槽后的第三个月，收到世界500强的offer，我该怎么办？》</p>
 <p>1）互联网公司优先，流量大，人才多，机会也多，流程规范一些</p>
 <p>2）今天的世界500强不比从前了，普华永道应该是四大之一，不知道信息化怎么样，你只要和你现在的公司对比就好了。</p>
 <p>3）问问自己想要什么，钱，经历，还是时间</p>
@@ -1087,36 +1087,36 @@ main();
 <p>职位描述</p>
 <ol>
 <li>支撑企业级应用后台开发，使用 React 等前端框架搭建后台页面，实现交互需求及后端服务对接;</li>
-<li>以模块化的思想设计开发通用前端组件，并能够针对OTT,移动端进行针对性优化；</li>
+<li>以模块化的思想设计开发通用前端组件，并能够针对OTT，移动端进行针对性优化；</li>
 <li>在理解前端开发流程的基础上，结合前端实际建立或优化提升工作效率的工具；</li>
 <li>在理解产品业务的基础上，提升产品的用户体验，技术驱动业务的发展；</li>
 <li>关注前端前沿技术研究，通过新技术服务团队和业务；</li>
-<li>使用 Weex 技术开发产品需求。&quot;</li>
+<li>使用 Weex 技术开发产品需求。</li>
 </ol>
 <p>职位要求</p>
 <ol>
 <li>精通前端技术，包括HTML/CSS/JavaScript/Node.JS等；</li>
 <li>掌握Bootstrap，jQuery，AngularJS，React等框架，并有项目实践；</li>
-<li>熟悉前端模块化、编译和构建工具，如grunt，gulp,webpack等；</li>
-<li>至少熟悉一门非前端的语言（如Java/PHP/C/C++/Python/Ruby）,有项目实践更佳；</li>
-<li>具备跨终端的前端开发能力，在Web（PC+Mobile）/Node.js/Native App三个方向上至少精通一个方向，具备多个的更佳，鼓励在Native和Web技术融合上的探索；</li>
-<li>具有较强的学习能力，对前端技术有持续的热情，个性乐观开朗,逻辑性强，善于和产品，UED，后端等方向同学合作。</li>
+<li>熟悉前端模块化、编译和构建工具，如grunt，gulp，webpack等；</li>
+<li>至少熟悉一门非前端的语言（如Java/PHP/C/C++/Python/Ruby），有项目实践更佳；</li>
+<li>具备跨终端的前端开发能力，在Web(PC+Mobile)/Node.js/Native App三个方向上至少精通一个方向，具备多个的更佳，鼓励在Native和Web技术融合上的探索；</li>
+<li>具有较强的学习能力，对前端技术有持续的热情，个性乐观开朗，逻辑性强，善于和产品，UED，后端等方向同学合作。</li>
 </ol>
 <h3 id="pixellab">PixelLab</h3>
 <p>PixelLab是与淘宝GM Lab联合成立的专注于视频算法方向的研发部门，主要涉及视频的空间感知、轨迹跟踪、图像分割、遮挡检测以及照片级渲染等相关技术。用于实现视频内的内容植入与后期特效的研发，属于视频MR的场景，主要应用于广告植入平台的研发，方向靠谱老板人好，欢迎推荐。主要需要的岗位包括了图像算法、3D视觉算法，渲染算法，WebGL以及并行计算等几大方向，因为算法类招聘实在难，所以将JD的链接帖出来希望同事们有适合的人可以内推一下。</p>
 <p>岗位要求：
 1) 本科及以上学历，5年以上工作开发经验； 
 2) 扎实的计算几何基础，熟悉常见数学工具； 
-3) 熟练WebGL, Canvas渲染开发，熟练Shader编写， 熟悉Three.js, OSG.js者优先; 
+3) 熟练WebGL、Canvas渲染开发，熟练Shader编写，熟悉Three.js、OSG.js者优先; 
 4) 熟练运用JavaScript语言与HTML5、CSS3等技术; 
-5) 熟悉主流移动浏览器的技术特点，有移动端H5, WebGL项目经验者优先; 
+5) 熟悉主流移动浏览器的技术特点，有移动端H5项目经验者优先; 
 6) 有移动端WebGL开发经验者优先; 
-6) 学习能力强、应变能力强，优秀的沟通能力和协调能力，执行能力强，具备较强的团队合作精神。</p>
+7) 学习能力强、应变能力强，优秀的沟通能力和协调能力，执行能力强，具备较强的团队合作精神。</p>
 <h3 id="-">蚂蚁金服</h3>
 <p>岗位要求：</p>
 <ul>
 <li>大学本科学历，2年以上开发经验，能熟练使用常见类库或框架，编写高质量的前端代码；</li>
-<li>熟悉NodeJS，有NodeJS开发经验，熟悉Express\koa等框架；</li>
+<li>熟悉NodeJS，有NodeJS开发经验，熟悉Express/koa等框架；</li>
 <li>熟练掌握React、Redux及相关框架和技术，有单页面应用开发经验；</li>
 <li>精通ES6，gulp，webpack等规范和技术；</li>
 <li>善于 Web 性能优化与前端效果的实现；</li>
@@ -1131,7 +1131,7 @@ main();
 <li>基于Webpack的前端工程化体系建设</li>
 <li>基于eggjs的react同构框架</li>
 <li>基于G2的业务数据可视化组件库</li>
-<li>大规模图形识别/图像处理/AR/VR//语音交互等研究性领域探索 </li>
+<li>大规模图形识别/图像处理/AR/VR/语音交互等研究性领域探索 </li>
 </ul>
 <h3 id="-">联系方式</h3>
 <p>目前北京，杭州，广州，上海，深圳，成都都在招聘，如果你也想跟我一起共事，请将简历邮件给我 <a href="mailto:langshu.ssl@alibaba-inc.com">langshu.ssl@alibaba-inc.com</a>，团队大量招人，也可以帮忙推荐给集团其他部门。</p>

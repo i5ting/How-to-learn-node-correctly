@@ -607,7 +607,7 @@ main();
 
 - co的返回值是promise，所以await可以直接接co。
 - co的参数是genrator
-- 在generator里可以使用yield，而yield后面接的有5种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
+- 在generator里可以使用yield，而yield后面接的有5种可能，故而把这些可以yield接的方式称为yieldable，即可以yield接的。
     - Promises
     - Thunks (functions)
     - array (parallel execution)

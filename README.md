@@ -1,6 +1,6 @@
-# 【知乎Live】狼叔：如何正确的学习Node.js
+# 【知乎Live】狼叔：如何正确地学习Node.js
 
-![](media/preview.png)
+![preview](media/preview.png)
 
 预览地址 https://i5ting.github.io/How-to-learn-node-correctly/
 
@@ -56,7 +56,7 @@ Node.js 不是一门语言也不是框架，它只是基于 Google V8 引擎的 
 
 Node.js通常被用来开发低延迟的网络应用，也就是那些需要在服务器端环境和前端实时收集和交换数据的应用（API、即时聊天、微服务）。阿里巴巴、腾讯、Qunar、百度、PayPal、道琼斯、沃尔玛和 LinkedIn 都采用了 Node.js 框架搭建应用。
 
-另外， Node.js 编写的包管理器 npm 已成为开源包管理领域最好的生态，截止到2017年10月份，有超过47万模块，每周下载量超过32亿次，每个月有超过700万开发者使用npm。
+另外， Node.js 编写的包管理器 npm 已成为开源包管理领域最好的生态，截至2017年10月份，有超过47万模块，每周下载量超过32亿次，每个月有超过700万开发者使用npm。
 
 当然了，Node.js 也有一些缺点。Node.js 经常被人们吐槽的一点就是：回调太多难于控制（俗称回调地狱）和 CPU 密集任务处理地不是很好。但是，目前异步流程技术已经取得了非常不错的进步，从Callback、Promise 到 Async函数，可以轻松地满足所有开发需求。至于 CPU 密集任务处理并非不可解，方案有很多，比如通过系统底层语言 Rust 来扩展 Node.js，但这样会比较麻烦。笔者坚信在合适的场景使用合适的东西，尤其是在微服务架构下，一切都是服务，可以做到语言无关。如果大家想使用 JavaScript 做 CPU 密集任务，推荐 Node.js 的兄弟项目 [fibjs](http://fibjs.org/)，基于纤程(fiber，可以简单理解为更轻量级的线程)，效率非常高，兼容npm，同时没有异步回调烦恼。
 
@@ -72,17 +72,17 @@ Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.j
 从这段介绍来看，解读要点如下
 
 - Node.js 不是 JavaScript 应用，不是语言（JavaScript 是语言），不是像 Rails(Ruby)、 Laravel(PHP) 或 Django(Python) 一样的框架，也不是像 Nginx 一样的 Web 服务器。Node.js 是 JavaScript 运行时环境
-- 构建在 Chrome's V8 这个著名的 JavaScript 引擎之上，Chrome V8 引擎以 C/C++ 为主，相当于使用JavaScript 写法，转成 C/C++ 调用，大大的降低了学习成本
-- 事件驱动（event-driven），非阻塞 I/O 模型（non-blocking I/O model），简单点讲就是每个函数都是异步的，最后由 Libuv 这个 C/C++ 编写的事件循环处理库来处理这些 I/O 操作，隐藏了非阻塞 I/O 的具体细节，简化并发编程模型，让你可以轻松的编写高性能的Web应用，所以它是轻量（lightweight）且高效（efficient）的
+- 构建在 Chrome's V8 这个著名的 JavaScript 引擎之上，Chrome V8 引擎以 C/C++ 为主，相当于使用JavaScript 写法，转成 C/C++ 调用，大大地降低了学习成本
+- 事件驱动（event-driven），非阻塞 I/O 模型（non-blocking I/O model），简单点讲就是每个函数都是异步的，最后由 Libuv 这个 C/C++ 编写的事件循环处理库来处理这些 I/O 操作，隐藏了非阻塞 I/O 的具体细节，简化并发编程模型，让你可以轻松地编写高性能的Web应用，所以它是轻量（lightweight）且高效（efficient）的
 - 使用 `npm` 作为包管理器，目前 `npm` 是开源库里包管理最大的生态，功能强大，截止到2017年12月，模块数量超过 60 万+
 
 大多数人都认为 Node.js 只能写网站后台或者前端工具，这其实是不全面的，Node.js的目标是让并发编程更简单，主要应用在以网络编程为主的 I/O 密集型应用。它是开源的，跨平台，并且高效（尤其是I/O处理），包括IBM、Microsoft、Yahoo、SAP、PayPal、沃尔玛及GoDaddy都是 Node.js 的用户。
 
 ### c）基本原理
 
-下面是一张 Node.js 早期的架构图，来自 Node.js 之父 Ryan Dahl 的演讲稿，在今天依然不过时，它简要的介绍了 Node.js 是基于 Chrome V8引擎构建的，由事件循环（Event Loop）分发 I/O 任务，最终工作线程（Work Thread）将任务丢到线程池（Thread Pool）里去执行，而事件循环只要等待执行结果就可以了。
+下面是一张 Node.js 早期的架构图，来自 Node.js 之父 Ryan Dahl 的演讲稿，在今天依然不过时，它简要地介绍了 Node.js 是基于 Chrome V8引擎构建的，由事件循环（Event Loop）分发 I/O 任务，最终工作线程（Work Thread）将任务丢到线程池（Thread Pool）里去执行，而事件循环只要等待执行结果就可以了。
 
-![](media/14912707129964/14912763353044.png)
+![Node.js 早期的架构图](media/14912707129964/14912763353044.png)
 
 核心概念
 
@@ -93,8 +93,8 @@ Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.j
 梳理一下
 
 - Chrome V8 是 JavaScript 引擎
-- Node.js 内置 Chrome V8 引擎，所以它使用的 JavaScript 语法
-- JavaScript 语言的一大特点就是单线程，也就是说，同一个时间只能做一件事
+- Node.js 内置 Chrome V8 引擎，所以它使用的是 JavaScript 语法
+- JavaScript 语言的一大特点就是单线程，也就是说，同一时间只能做一件事
 - 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
 - 如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是很多时候 CPU 是闲着的，因为 I/O 很慢，不得不等着结果出来，再往下执行
 - CPU 完全可以不管 I/O 设备，挂起处于等待中的任务，先运行排在后面的任务
@@ -119,11 +119,11 @@ Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.j
 
 Node.js 其实就是帮我们构建类似的机制。我们在写代码的时候，实际上就是取号的过程，由 Event Loop 来接受处理，而真正执行操作的是具体的线程池里的 I/O 任务。之所以说 Node.js 是单线程，就是因为在接受任务的时候是单线程的，它无需进程/线程切换上下文的成本，非常高效，但它在执行具体任务的时候是多线程的。
 
-Node.js 公开宣称的目标是 “旨在提供一种简单的构建可伸缩网络程序的方法”，毫无疑问，它确实做到了。这种做法将并发编程模型简化了，Event Loop和具体线程池等细节被 Node.js 封装了，继而将异步调用 Api 写法暴露给开发者。真是福祸相依，一方面简化了并发编程，另一方面在写法上埋下了祸根，这种做法的好处是能让更多人轻而易举地写出高性能的程序！
+Node.js 公开宣称的目标是 “旨在提供一种简单地构建可伸缩网络程序的方法”，毫无疑问，它确实做到了。这种做法将并发编程模型简化了，Event Loop和具体线程池等细节被 Node.js 封装了，继而将异步调用 Api 写法暴露给开发者。真是福祸相依，一方面简化了并发编程，另一方面在写法上埋下了祸根，这种做法的好处是能让更多人轻而易举地写出高性能的程序！
 
 在Node.js Bindings层做的事儿就是将 Chrome V8 等暴露的 `C/C++` 接口转成JavaScript Api，并且结合这些 Api 编写了 Node.js 标准库，所有这些 Api 统称为 Node.js SDK，后面模块章节会有更详细的讨论。
 
-微软在2016年宣布在MIT许可协议下开放 Chakra 引擎，并以 `ChakraCore` 为名在 Github 上开放了源代码，`ChakraCore` 是一个完整的 JavaScript 虚拟机，它拥有着和 `Chakra` 几乎相同的功能与特性。微软向 Node.js 主分支提交代码合并请求，让 Node.js 用上 `ChakraCore`引擎，即 [nodejs/node-chakracore](https://github.com/nodejs/node-chakracore) 项目。实际上微软是通过创建名为 `V8 shim` 的库的赋予了 `ChakraCore` 处理谷歌 Chrome V8 引擎指令的能力，其原理示意图如下
+微软在2016年宣布在MIT许可协议下开放 Chakra 引擎，并以 `ChakraCore` 为名在 Github 上开放了源代码，`ChakraCore` 是一个完整的 JavaScript 虚拟机，它拥有着和 `Chakra` 几乎相同的功能与特性。微软向 Node.js 主分支提交代码合并请求，让 Node.js 用上 `ChakraCore`引擎，即 [nodejs/node-chakracore](https://github.com/nodejs/node-chakracore) 项目。实际上微软是通过创建名为 `V8 shim` 的库赋予了 `ChakraCore` 处理谷歌 Chrome V8 引擎指令的能力，其原理示意图如下
 
 ![](media/14912707129964/15018598977763.jpg)
 
@@ -184,7 +184,7 @@ CoffeeScript虽然也是JavaScript友好语言，但其语法借鉴ruby，崇尚
 
 面向对象想用好也不容易的，而且js里有各种实现，真是让人眼花缭乱。
 
-- 基于原型的写法，纵观JavaScript高级编程，就是翻来覆去的讲这个，这个很基础，但不是很好用。可以不用，但不可以不会。
+- 基于原型的写法，纵观JavaScript高级编程，就是翻来覆去地讲这个，这个很基础，但不是很好用。可以不用，但不可以不会。
 - 自己写面向对象机制是最好的，但不是每个人都有这个能力的。好在es6规范出了更好一点的面向对象，通过class、extends、super关键字来定义类，已经明显好很多了，虽然还很弱，但起码勉强能用起来了。从面向过程走过来的同学，推荐这种写法，简单易用。但要注意面向对象要有面向对象的写法，要理解抽象，继承，封装，多态4个基本特征。如果想用好，你甚至还需要看一些设计模式相关的书。好在有《JavaScript设计模式》一书。Koa2里已经在用这种写法了。
 - js是脚本语言，解释即可执行。所以它的最大缺点是没有类型系统，这在规模化编程里是非常危险的，一个函数，传参就能玩死人。于是现在流行使用flow和typescript来做类型校验。flow只是工具，比较轻量级。而typescript是es6超集，给es6补充了类型系统和更完善的面向对象机制，所以大部分人都会对ts有好感，很有可能是未来的趋势。
 
@@ -291,7 +291,7 @@ Visual Studio Code（以下简称vsc）
 
 《Node.js in action》一书里说，Node.js 所针对的应用程序有一个专门的简称：DIRT。它表示数据密集型实时（data-intensive real-time）程序。因为 Node.js 自身在 I/O 上非常轻量，它善于将数据从一个管道混排或代理到另一个管道上，这能在处理大量请求时持有很多开放的连接，并且只占用一小部分内存。它的设计目标是保证响应能力，跟浏览器一样。
 
-这话不假，但在今天来看，DIRT 还是范围小了。其实 DIRT 本质上说的 I/O 处理的都算，但随着大前端的发展，Node.js 已经不再只是 I/O 处理相关，而是更加的“Node”！
+这话不假，但在今天来看，DIRT 还是范围小了。其实 DIRT 本质上说的 I/O 处理的都算，但随着大前端的发展，Node.js 已经不再只是 I/O 处理相关，而是更加地“Node”！
 
 Node.js 使用场景主要分为4大类
 
@@ -309,10 +309,10 @@ Node.js 使用场景主要分为4大类
 | --- | --- | --- |
 | 网站 | 类似于 `cnodejs.org` 这样传统的网站 | `Express` / `Koa` |
 | Api | 同时提供给移动端，PC，`H5` 等前端使用的 `HTTP Api` 接口 | `Restify` / `HApi` |
-| Api代理 | 为前端提供的，主要对后端Api接口进行再处理，以便更多的适应前端开发 | `Express` / `Koa` |
+| Api代理 | 为前端提供的，主要对后端Api接口进行再处理，以便更多地适应前端开发 | `Express` / `Koa` |
 | IM即时聊天 | 实时应用，很多是基于 `WebSocket`协议的 | `Socket.io` / `sockjs` |
 | 反向代理 | 提供类似于 `nginx` 反向代理功能，但对前端更友好 | `anyproxy` / `node-http-proxy` / `hiproxy` |
-| 前端构建工具 | 辅助前端开发，尤其是各种预编译，构建相关的工具，能够极大的提高前端开发效率 | `Grunt` / `Gulp` / `Bower` / `Webpack` / `Fis3` / `YKit` |
+| 前端构建工具 | 辅助前端开发，尤其是各种预编译，构建相关的工具，能够极大地提高前端开发效率 | `Grunt` / `Gulp` / `Bower` / `Webpack` / `Fis3` / `YKit` |
 | 命令行工具 | 使用命令行是非常酷的方式，前端开发自定义了很多相关工具，无论是shell命令，node脚本，还是各种脚手架等，几乎每个公司\小组都会自己的命令行工具集 | `Cordova` / `Shell.js` |
 | 操作系统 | 有实现，但估计不太会有人用 | `NodeOS` |
 | 跨平台打包工具 | 使用 Web 开发技术开发PC客户端是目前最流行的方式，会有更多前端开发工具是采用这种方式的 | PC端的electron、nw.js，比如钉钉PC客户端、微信小程序IDE、微信客户端，移动的Cordova，即老的Phonegap，还有更加有名的一站式开发框架Ionicframework |
@@ -337,13 +337,13 @@ Node.js 应用场景非常丰富，比如 Node.js 可以开发操作系统，但
 | 3 | 命令行工具 | 所有辅助开发，运维，提高效率等等可以用cli做的，使用node来开发都非常合适，是编写命令行工具最简单的方式，java8以后也参考了node的命令行实现 |
 | 4 | 微服务与RPC | node里有各种rpc支持，比如node编写的dnode，seneca，也有跨语言支持的grpc，足够应用了 |
 | 5 | 微信公众号开发 | 相关sdk，框架非常多，是快速开发的利器 |
-| 6 | 前端流行SSR && PWA | SSR是服务器端渲染，PWA是渐进式Web应用，都是今年最火的技术。如果大家用过，一定对Node.js不陌生。比如React、Vuejs都是Node.js实现的ssr。至于pwa的service-worker也是Node.js实现的。那么为啥不用其他语言实现呢？不是其他语言不能实现，而是使用Node.js简单、方便、学习成本低，轻松获得高性能，如果用其他语言，我至少还得装环境 |
+| 6 | 前端流行SSR && PWA | SSR是服务器端渲染，PWA是渐进式Web应用，都是今年最火的技术。如果大家用过，一定对Node.js不陌生。比如React、Vuejs都是Node.js实现的SSR。至于pwa的service-worker也是Node.js实现的。那么为啥不用其他语言实现呢？不是其他语言不能实现，而是使用Node.js简单、方便、学习成本低，轻松获得高性能，如果用其他语言，我至少还得装环境 |
 
-可以说目前大家能够看到的、用到的软件都有 Node.js 身影，当下最流行的软件写法也大都是基于 Node.js 的，比如 PC 客户端 [luin/medis](https://github.com/luin/medis) 采用 `electron` 打包，写法采用 React + Redux。我自己一直的实践的【Node全栈】，也正是基于这种趋势而形成的。在未来，Node.js 的应用场景会更加的广泛，更多参见 [sindresorhus/awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs)。
+可以说目前大家能够看到的、用到的软件都有 Node.js 身影，当下最流行的软件写法也大都是基于 Node.js 的，比如 PC 客户端 [luin/medis](https://github.com/luin/medis) 采用 `electron` 打包，写法采用 React + Redux。我自己一直在实践的【Node全栈】，也正是基于这种趋势而形成的。在未来，Node.js 的应用场景会更加地广泛，更多参见 [sindresorhus/awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs)。
 
 ### Node核心：异步流程控制
 
-Node.js是为异步而生的，它自己把复杂的事儿做了（高并发，低延时），交给用户的只是有点难用的Callback写法。也正是坦诚的将异步回调暴露出来，才有更好的流程控制方面的演进。也正是这些演进，让Node.js从DIRT（数据密集实时应用）扩展到更多的应用场景，今天的Node.js已经不只是能写后端的JavaScript，已经涵盖了所有涉及到开发的各个方面，而Node全栈更是热门种的热门。
+Node.js是为异步而生的，它自己把复杂的事儿做了（高并发，低延时），交给用户的只是有点难用的Callback写法。也正是坦诚地将异步回调暴露出来，才有更好的流程控制方面的演进。也正是这些演进，让Node.js从DIRT（数据密集实时应用）扩展到更多的应用场景，今天的Node.js已经不只是能写后端的JavaScript，已经涵盖了所有涉及到开发的各个方面，而Node全栈更是热门中的热门。
 
 直面问题才能有更好的解决方式，Node.js的异步是整个学习Node.js过程中重中之重。
 
@@ -460,7 +460,7 @@ Node.js 约定所有Api都采用错误优先的回调方式，这部分场景都
 
 Promise最早也是在commonjs社区提出来的，当时提出了很多规范。比较接受的是promise/A规范。后来人们在这个基础上，提出了promise/A+规范，也就是实际上现在的业内推行的规范。ES6 也是采用的这种规范。
 
-Promise意味着[许愿|承诺]一个还没有完成的操作，但在未来会完成的。与Promise最主要的交互方法是通过将函数传入它的then方法从而获取得Promise最终的值或Promise最终最拒绝（reject）的原因。要点有三个：
+Promise意味着[许愿|承诺]一个还没有完成的操作，但在未来会完成的。与Promise最主要的交互方法是将函数传入它的then方法从而获得Promise最终的值或Promise最终被拒绝（reject）的原因。要点有三个：
 
 - 递归，每个异步操作返回的都是promise对象
 - 状态机：三种状态转换，只在promise对象内部可以控制，外部不能改变状态
@@ -470,7 +470,7 @@ Promise意味着[许愿|承诺]一个还没有完成的操作，但在未来会�
 
 ```js
 var promise = new Promise(function(resolve, reject) {
-  // do a thing, possibly async, then…
+  // do something, possibly async, then…
 
   if (/* everything turned out fine */) {
     resolve("Stuff worked!");
@@ -496,7 +496,7 @@ promise.then(function(text){
 
 它的主要交互方式是通过then函数，如果Promise成功执行resolve了，那么它就会将resolve的值传给最近的then函数，作为它的then函数的参数。如果出错reject，那就交给catch来捕获异常就好了。
 
-Promise 的最大优势是标准化，各类异步工具库都按照统一规范实现，即使是async函数也可以无缝集成。所以用 Promise 封装 API 通用性强，用起来简单，学习成本低。在async函数普及之前，绝大部分应用都是采用Promise来做异步流程控制的，所以掌握Promise是Node.js学习过程中必须要掌握的重中之重。
+Promise 的最大优势是标准化，各类异步工具库都按照统一规范实现，即使是async函数也可以无缝集成。所以用 Promise 封装 API 通用性强，用起来简单，学习成本低。在async函数普及之前，绝大部分应用都是采用Promise来做异步流程控制的，所以Promise是Node.js学习过程中必须要掌握的重中之重。
 
 Bluebird是 Node.js 世界里性能最好的Promise/a+规范的实现模块，Api非常齐全，功能强大，是原生Promise外的不二选择。
 
@@ -608,7 +608,7 @@ main();
 - co的返回值是promise，所以await可以直接接co。
 - co的参数是genrator
 - 在generator里可以使用yield，而yield后面接的有5种可能，故而把这些可以yield接的方式称为yieldable，即可以yield接的。
-    - Promises
+    - Promise
     - Thunks (functions)
     - array (parallel execution)
     - objects (parallel execution)

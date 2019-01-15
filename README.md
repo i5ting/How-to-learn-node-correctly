@@ -239,10 +239,12 @@ npm基本命令
 
 | 名称 | 描述 | 简写 |
 | --- | --- | --- |
-| npm install xxx | 安装xxx模块，但不记录到package.json里 | npm i xxx |
-| npm install --save xxx | 安装xxx模块，并且记录到package.json里，字段对应的dependency，是产品环境必须依赖的模块 | npm i -s xxx |
+| npm install xxx | 安装xxx模块，并且记录到package.json里，字段对应的dependency，是产品环境必须依赖的模块 | npm i xxx |
+| npm install --no-save xxx | 安装xxx模块，但不记录到package.json里 | npm i --no-save xxx |
 | npm install --save-dev xxx | 安装xxx模块，并且记录到package.json里，字段对应的dev-dependency，是开发环境必须依赖的模块，比如测试类的（mocha、chai、sinon、zombie、supertest等）都在 | npm i -D xxx |
 | npm install --global xxx | 全局安装xxx模块，但不记录到package.json里，如果模块里package.json有bin配置，会自动链接，作为cli命令 | npm i -g xxx |
+
+**注意：** npm 5 之前采用默认 --no-save 策略，需要加 --save 或 -S 参数将其记录到 package.json 里。
 
 ### 常用软件
 
@@ -348,9 +350,9 @@ Node.js是为异步而生的，它自己把复杂的事儿做了（高并发，�
 直面问题才能有更好的解决方式，Node.js的异步是整个学习Node.js过程中重中之重。
 
 - 1) 异步流程控制学习重点
-- 2）Api写法：Error-first Callback 和 EventEmitter 
-- 3）中流砥柱：Promise 
-- 4）终极解决方案：Async/Await 
+- 2）Api写法：Error-first Callback 和 EventEmitter
+- 3）中流砥柱：Promise
+- 4）终极解决方案：Async/Await
 
 #### 1) 异步流程控制学习重点
 
@@ -374,7 +376,7 @@ Node.js是为异步而生的，它自己把复杂的事儿做了（高并发，�
 
 1. Node.js SDK里callback写法必须会的。
 2. Node.js学习重点: Async函数与Promise
-    1. 中流砥柱：Promise 
+    1. 中流砥柱：Promise
     2. 终极解决方案：Async/Await
 
 所以下面我们会分个小部分进行讲解。
@@ -408,7 +410,7 @@ var EventEmitter = require('events')
 var util = require('util')
 
 var MyEmitter = function () {
- 
+
 }
 
 util.inherits(MyEmitter, EventEmitter)
@@ -436,7 +438,7 @@ Node.js的API都是异步的，同步的函数是奢求，要查API文档，在�
 ![](media/14913280187332/api.png)
 
 
-#### 3）中流砥柱：Promise 
+#### 3）中流砥柱：Promise
 
 回调地狱
 
@@ -512,19 +514,19 @@ Bluebird是 Node.js 世界里性能最好的Promise/a+规范的实现模块，Ap
 
 - Node.js最新技术栈之Promise篇  https://cnodejs.org/topic/560dbc826a1ed28204a1e7de
 - 理解 Promise 的工作原理 https://cnodejs.org/topic/569c8226adf526da2aeb23fd
-- Promise 迷你书 http://liubin.github.io/promises-book/ 
+- Promise 迷你书 http://liubin.github.io/promises-book/
 
 #### 4）终极解决方案：Async/Await
 
 Async/Await是异步操作的终极解决方案，Koa 2在node 7.6发布之后，立马发布了正式版本，并且推荐使用async函数来编写Koa中间件。
 
-这里给出一段Koa 2应用里的一段代码 
+这里给出一段Koa 2应用里的一段代码
 
 ```js
 exports.list = async (ctx, next) => {
   try {
     let students = await Student.getAllAsync();
-  
+
     await ctx.render('students/index', {
       students : students
     })
@@ -635,7 +637,7 @@ main();
 
 - 1) 异步流程控制学习重点
 - 2）Api写法：Error-first Callback 和 EventEmitter
-- 3）中流砥柱：Promise 
+- 3）中流砥柱：Promise
 - 4）终极解决方案：Async/Await
 
 这里再提一下关于Node.js源码阅读问题，很多人api都还没玩儿熟练就去阅读源码，这是非常不赞成的，不带着问题去读源码是比较容易迷失在大量代码中的。效果并不好。
@@ -994,14 +996,14 @@ Web开发对移动端的冲击非常大。当然现在Web技术也开发PC clien
 p6的要求（语音）
 
 主动执行，辅助团队
-掌握一门后端语言；熟悉用户体验相关知识；了解软件工程。 
-精通浏览器工作原理，熟悉HTTP协议，熟悉设计模式。 
+掌握一门后端语言；熟悉用户体验相关知识；了解软件工程。
+精通浏览器工作原理，熟悉HTTP协议，熟悉设计模式。
 掌握改善无障碍访问的方法；掌握数据采集分析能力；熟悉可维护性问题。
-通过开发、使用、推广效率工具让自己与团队的效率得到提高； 
-提炼可复用组件，为类库贡献高质量代码. 
-积极完善知识库； 
+通过开发、使用、推广效率工具让自己与团队的效率得到提高；
+提炼可复用组件，为类库贡献高质量代码.
+积极完善知识库；
 跨团队分享技术和专业相关知识。
-辅导新人技能成长； 
+辅导新人技能成长；
 协助主管做招聘和团队管理工作。
 
 ### 大家是选大公司还是小公司？
@@ -1080,12 +1082,12 @@ p6的要求（语音）
 PixelLab是与淘宝GM Lab联合成立的专注于视频算法方向的研发部门，主要涉及视频的空间感知、轨迹跟踪、图像分割、遮挡检测以及照片级渲染等相关技术。用于实现视频内的内容植入与后期特效的研发，属于视频MR的场景，主要应用于广告植入平台的研发，方向靠谱老板人好，欢迎推荐。主要需要的岗位包括了图像算法、3D视觉算法，渲染算法，WebGL以及并行计算等几大方向，因为算法类招聘实在难，所以将JD的链接帖出来希望同事们有适合的人可以内推一下。
 
 岗位要求：
-1) 本科及以上学历，5年以上工作开发经验； 
-2) 扎实的计算几何基础，熟悉常见数学工具； 
-3) 熟练WebGL、Canvas渲染开发，熟练Shader编写，熟悉Three.js、OSG.js者优先; 
-4) 熟练运用JavaScript语言与HTML5、CSS3等技术; 
-5) 熟悉主流移动浏览器的技术特点，有移动端H5项目经验者优先; 
-6) 有移动端WebGL开发经验者优先; 
+1) 本科及以上学历，5年以上工作开发经验；
+2) 扎实的计算几何基础，熟悉常见数学工具；
+3) 熟练WebGL、Canvas渲染开发，熟练Shader编写，熟悉Three.js、OSG.js者优先;
+4) 熟练运用JavaScript语言与HTML5、CSS3等技术;
+5) 熟悉主流移动浏览器的技术特点，有移动端H5项目经验者优先;
+6) 有移动端WebGL开发经验者优先;
 7) 学习能力强、应变能力强，优秀的沟通能力和协调能力，执行能力强，具备较强的团队合作精神。
 
 ### 蚂蚁金服
@@ -1108,19 +1110,19 @@ PixelLab是与淘宝GM Lab联合成立的专注于视频算法方向的研发部
 - 基于Webpack的前端工程化体系建设
 - 基于eggjs的react同构框架
 - 基于G2的业务数据可视化组件库
-- 大规模图形识别/图像处理/AR/VR/语音交互等研究性领域探索 
- 
+- 大规模图形识别/图像处理/AR/VR/语音交互等研究性领域探索
+
 ### 联系方式
- 
+
 目前北京，杭州，广州，上海，深圳，成都都在招聘，如果你也想跟我一起共事，请将简历邮件给我 langshu.ssl@alibaba-inc.com，团队大量招人，也可以帮忙推荐给集团其他部门。
 
 有机会和winter，勾股，玉伯，苏千，朴灵、死马、偏右，徐飞，阮一峰，天猪，裕波等大神一起工作哦。
 
 悄悄地说，其实其他公司我也可以帮推荐。
- 
+
 ## 结束语
- 
-年轻时死磕，年长点让小弟死磕，现在抓个专家一起吃饭，没有什么是一顿饭解决不了的，不行就二顿 
+
+年轻时死磕，年长点让小弟死磕，现在抓个专家一起吃饭，没有什么是一顿饭解决不了的，不行就二顿
 
 工程师的能力不是编码和死磕，而是解决问题
 
@@ -1148,5 +1150,3 @@ https://www.zhihu.com/lives/928687583372926976
 
 
 ![](media/15165422813679.jpg)
-
-

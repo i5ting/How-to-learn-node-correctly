@@ -1,5 +1,15 @@
 # 【知乎Live】狼叔：如何正确的学习Node.js
 
+
+《狼书（卷1）：更了不起的Node.js》Node.js》 已出版，和本文内容类似，但更深入。
+
+![](media/book.png)
+
+- [京东购买地址](https://item.jd.com/12623248.html)
+- [当当购买地址](http://product.dangdang.com/27880000.html)
+
+《狼书（卷2）：Node.js Web应用开发》 《狼书（卷3）：Node.js高级技术》，预计10月之前出版。 
+
 ![](media/preview.png)
 
 预览地址 https://i5ting.github.io/How-to-learn-node-correctly/
